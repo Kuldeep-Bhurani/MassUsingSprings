@@ -6,17 +6,22 @@ let gravity;
 let c_width;
 let c_height = 500;
 let restLength = 150;
+let s_width = screen.width;
 
-if(screen.width >= 700){
+function windowResized(){
+  s_width = screen.width;
+}
+
+if(s_width >= 700){
   c_width = 600;
 }
-if(screen.width < 700 && screen.width >= 510){
+if(s_width < 700 && screen.width >= 510){
   c_width = 500;
 }
-if(screen.width < 500){
+if(s_width < 500){
   c_width = 400;
 }
-if(screen.width < 411){
+if(s_width < 411){
   c_width = 275;
   c_height = 350;
   restLength = 50;

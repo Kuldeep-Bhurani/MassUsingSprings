@@ -67,6 +67,9 @@
   .calc input{
     min-width: 300px;
   }
+  .result{
+    font-size: 1.5rem;
+  }
 }
 
 @media screen and (max-width: 411px) {
@@ -78,5 +81,8 @@
   }
   .documentation img{
     height: 18rem;
+  }
+  .result{
+    font-size: 1rem;
   }
 }
