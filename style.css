@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+
+.flex{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header h1{
+  color: #70327e;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+#defaultCanvas0{
+  border: 1px solid whitesmoke;
+  border-radius: 15px;
+  margin: 1rem;
+}
+
+.documentation{
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 1.5rem;
+  padding-top: 5rem;
+  margin: auto;
+  flex-direction: column;
+  max-width: 40%;
+}
+
+.documentation img{
+  height: 20rem;
+}
+
+.calc{
+  flex-direction: column;
+}
+
+.calc input{
+  width: 100%;
+  min-width: 500px;
+  padding: 15px;
+  font-size: 0.8rem;
+  border: 2px solid #70327e;
+  border-radius: 15px;
+}
+
+.btn{
+  cursor: pointer;
+  color: white;
+  background-color: #70327e;
+  margin: 25px 0;
+  font-size: 2rem;
+}
+
+.result{
+  color: #70327e;
+  font-weight: 500;
+  font-size: 2rem;
+}
+
+@media screen and (max-width: 1140px) {
+    .documentation {
+        max-width: 75%;
+    }
+}
+
+@media screen and (max-width: 750px) {
+  .calc input{
+    min-width: 300px;
+  }
+}
+
+@media screen and (max-width: 411px) {
+  .documentation{
+    font-size: 1.3rem;
+  }
+  .calc input{
+    min-width: 200px;
+  }
+  .documentation img{
+    height: 18rem;
+  }
+}

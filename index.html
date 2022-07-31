@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>&omega; = &Sqrt;k/&Sqrt;m proof</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+  <script src="https://cdn.jsdelivr.net/npm/p5@1.4.2/lib/p5.js"></script>
+  <script src="sketch.js"></script>
+  <script>
+    function calc(){
+      var result = "";
+      var omega = document.getElementById("AngFreq").value;
+      var k = document.getElementById("SpConstant").value;
+      result = k/omega**2
+      document.getElementById("result").innerHTML = 'Mass = ' + result;
+      document.getElementById("result2").innerHTML = 'Weight On Earth = ' + result*9.80;
+    }
+  </script>
+</head>
+
+<body>
+  <div class="header flex">
+    <h1>Calculation Of Mass Using Springs</h1>
+  </div>
+  <div class="flex" id="cnv-container">
+  </div>
+  <div class="documentation flex">
+    <p>
+    According to Hooke's Law,
+    <br>For Elastic Deformation in a Spring, Restoring Force(F) &Proportional; Change In Length(x)
+    </p>
+    <img src="https://www.science-sparks.com/wp-content/uploads/2022/04/Hookes-LAw-1-scaled.jpeg">
+    <p>F<sub>s</sub> = -kx
+      </br>Let the above equation be eq.1
+    <p>
+    According to Newton's Second Law,
+    <br>F<sub>net</sub> = ma</br>
+    &#8658; F<sub>net</sub> = m(d<sup>2</sup>x/dt<sup>2</sup>) [&because; acc. is equal to the 2nd derivative of position or derivative of velocity]
+    </br>Let the above equation be eq.2
+    </p>
+    <p>
+      Substituting eq.2 in eq.1 we get,</br>
+      F<sub>s</sub> = -kx = m(d<sup>2</sup>x/dt<sup>2</sup>)
+      </br>Solving this differential eq. for x(t) or x as a function of time gives us,
+      </br>x = Acos(&omega;t+&Phi;)</br>Where, A is amplitude, &omega; is angular frequency and &Phi; is the phase angle
+      </br>&#8658; dx/dt = -A&omega;sin(&omega;t+&Phi;)
+      </br>&#8658; d<sup>2</sup>x/dt<sup>2</sup> = -A&omega;<sup>2</sup>cos(&omega;t+&Phi;) = &omega;<sup>2</sup>x
+    </br>
+      </br>This only holds true if,
+      </br>-&omega;<sup>2</sup>x + kx = 0
+      </br>&#8658; &omega;<sup>2</sup> = k/m
+      </br>&#8658; &omega; = &Sqrt;k/&Sqrt;m
+    </p>
+    <p>
+      This can be used to calculate weight of objects as well as astronauts in space.
+    </p>
+    <p>
+      <form class="calc flex">
+        <label for="AngFreq">&omega;</label>
+        <input id="AngFreq" value='1' name="AngFreq" type="number" onChange="calc(this.value)"/></br>
+        <label for="SpConstant">k</label>
+        <input id="SpConstant" value='1' name="SpConstant" type="number" onChange="calc(this.value)"/></br>
+        <input class="btn" type="button" value="Activate" onclick="calc()" />
+        <p class="result" id="result" name="rslt">
+        <br />
+        </p>
+        <p class="result" id="result2" name="rslt2">
+        <br />
+        </p>
+      </form>
+    </p>
+  </div>
+</body>
+
+</html>
