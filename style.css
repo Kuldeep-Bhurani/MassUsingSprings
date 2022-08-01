@@ -40,15 +40,7 @@
   padding: 15px;
   font-size: 0.8rem;
   border: 2px solid #70327e;
-  border-radius: 15px;
-}
-
-.btn{
-  cursor: pointer;
-  color: white;
-  background-color: #70327e;
-  margin: 25px 0;
-  font-size: 2rem;
+  border-radius: 15px
 }
 
 .result{
